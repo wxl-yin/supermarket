@@ -1,5 +1,6 @@
 from django import forms
 
+from sp_user.helper import set_password
 from sp_user.models import SpUser
 
 """
@@ -53,3 +54,48 @@ class RegisterModelForm(forms.ModelForm):
         if rs:
             raise forms.ValidationError("手机号码已经被注册")
         return phone
+
+
+class LoginModelForm(forms.ModelForm):
+    """登陆的form表单"""
+    class Meta:
+        model = SpUser
+        fields = ['phone', 'password']
+
+        error_messages = {
+            'phone': {
+                "required": "手机号码必须填写!"
+            },
+            'password': {
+                "required": "密码必须填写!"
+            }
+        }
+
+        widgets = { # 样式
+            'phone': forms.TextInput(attrs={"class": "login-name", "placeholder": '请输入手机号'}),
+            'password': forms.PasswordInput(attrs={"class": "login-password", "placeholder": '请输入密码'}),
+        }
+
+    def clean(self):# 综合校验
+        cleaned_data = self.cleaned_data
+        # 获取用手机和密码
+        phone = cleaned_data.get('phone')
+        password = cleaned_data.get('password')
+        # 验证手机号码是否存在
+        if all([phone, password]):
+            # 根据手机号码获取用户
+            try:
+                user = SpUser.objects.get(phone=phone)
+            except SpUser.DoesNotExist:
+                raise forms.ValidationError({"phone": "该用户不存在!"})
+
+            # 判断密码是否正确
+            if user.password != set_password(password):
+                raise forms.ValidationError({"password": "密码填写错误!"})
+
+            # 正确
+            # 将用户信息保存到cleaned_data中
+            cleaned_data['user'] = user
+            return cleaned_data
+        else:
+            return cleaned_data

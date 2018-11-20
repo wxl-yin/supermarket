@@ -2,8 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
 
-from sp_user.forms import RegisterModelForm
-from sp_user.helper import set_password
+from sp_user.forms import RegisterModelForm, LoginModelForm
+from sp_user.helper import set_password, login
 from sp_user.models import SpUser
 
 """
@@ -18,12 +18,25 @@ from sp_user.models import SpUser
 
 class LoginView(View):
     """登陆"""
-
     def get(self, request):
-        return render(request, "sp_user/login.html")
+        # 创建登陆表单对象
+        login_form = LoginModelForm()
+        return render(request, "sp_user/login.html", {'form': login_form})
 
     def post(self, request):
-        pass
+        # 接收数据
+        data = request.POST
+        # 验证数据
+        login_form = LoginModelForm(data)
+        if login_form.is_valid():
+            # 验证成功后将登陆标识放到session中
+            user = login_form.cleaned_data.get('user')
+            # 调用登陆的方法,放在helper模块中的
+            login(request, user)
+            # 跳转到用户中心页面
+            return redirect('sp_user:member')
+        else:
+            return render(request, "sp_user/login.html", {'form': login_form})
 
 
 class RegisterView(View):
@@ -74,7 +87,10 @@ class MemeberView(View):
     """个人中心"""
 
     def get(self, request):
-        return render(request, 'sp_user/member.html')
+        context = {
+            "phone": request.session.get('phone')
+        }
+        return render(request, 'sp_user/member.html',context)
 
     def post(self, request):
         pass
