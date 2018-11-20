@@ -44,6 +44,7 @@ class RegisterView(View):
             data = form.cleaned_data
             # 密码需要加密
             password = data.get('password2')
+            # 调用方法帮助我对密码进行加密
             password = set_password(password)
             # 保存到数据库
             SpUser.objects.create(phone=data.get('phone'), password=password)
