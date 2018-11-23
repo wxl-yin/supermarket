@@ -2,7 +2,7 @@ from django import forms
 
 from sp_user.helper import set_password
 from sp_user.models import SpUser
-
+from django_redis import get_redis_connection
 """
     普通的form
     
@@ -24,6 +24,8 @@ class RegisterModelForm(forms.ModelForm):
                                 }
                                 )
     password2 = forms.CharField(error_messages={'required': "确认密码必填"})
+
+    verify_code = forms.CharField(error_messages={"required": "验证码必填!"})
 
     class Meta:
         model = SpUser
@@ -54,6 +56,29 @@ class RegisterModelForm(forms.ModelForm):
         if rs:
             raise forms.ValidationError("手机号码已经被注册")
         return phone
+
+    # 单独验证验证
+    def clean_verify_code(self):
+        # 获取用户表单提交的
+        phone = self.cleaned_data.get("phone")
+        verify_code = self.cleaned_data.get('verify_code')
+        # 获取redis中的
+        r = get_redis_connection("default")
+        if phone:
+            # 获取 redis中获取的值 是二进制编码,必须解码
+            code = r.get(phone)
+            code = code.decode("utf-8")
+            if code is None:
+                raise forms.ValidationError("验证码已经过期或者错误!")
+            # 比对
+            if verify_code != code:
+                raise forms.ValidationError("验证码填写错误!")
+
+            # 最后返回当前字段清洗后的结果
+            return verify_code
+        else:
+            return verify_code
+
 
 
 class LoginModelForm(forms.ModelForm):
@@ -99,3 +124,12 @@ class LoginModelForm(forms.ModelForm):
             return cleaned_data
         else:
             return cleaned_data
+
+
+class InfoModelForm(forms.ModelForm):
+    class Meta:
+        model = SpUser
+        fields = ['nickname','head','birth_of_date']
+
+
+        # error_messages

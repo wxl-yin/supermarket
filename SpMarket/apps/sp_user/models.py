@@ -24,6 +24,8 @@ class SpUser(BaseModel):
     hometown = models.CharField(max_length=50, null=True, blank=True, verbose_name="家乡")
     birth_of_date = models.DateField(null=True, blank=True, verbose_name="出生日期")
     address = models.CharField(max_length=255, null=True, blank=True, verbose_name="详细位置")
+    # 设置头像字段
+    head = models.ImageField(upload_to="head/%Y%m",default="head/memtx.png",verbose_name="用户头像")
 
     def __str__(self):
         return self.phone

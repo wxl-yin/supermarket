@@ -10,39 +10,36 @@
 {% endblock %}
 
 {% block content %}
+    <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
     <ul class="safty1">
         <li>
             <a href="">
                 <i style="margin-top: 25px;">头像</i>
                 <div class="infor-pic">
-                    <img src="{% static 'images/infortx.png' %}"/>
+                    <img src="{{ MEDIA_URL }}{{ user.head }}"/>
                 </div>
+                <input type="file" name="head">
             </a>
         </li>
         <li>
-            <a href="">
-                <i>昵称</i>
-                <input class="infor-tele" placeholder="默契"/>
-            </a>
+            <i>昵称</i>
+            <input type="text" name="nickname" value="{{ user.nickname|default:'' }}" class="infor-tele" placeholder="默契"/>
         </li>
         <li>
-            <a href="">
-                <i>性别</i>
-                <i class="infor-tele">
-                    <label class="am-radio-inline">
-                        <input type="radio" name="radio10" checked="checked" value="1" data-am-ucheck>男
-                    </label>
-                    <label class="am-radio-inline">
-                        <input type="radio" name="radio10" value="1" data-am-ucheck>女
-                    </label>
-                </i>
-            </a>
+            <i>性别</i>
+            <i class="infor-tele">
+                <label class="am-radio-inline">
+                    <input type="radio" name="gender" {% if user.gender == 1 %}checked="checked"{% endif %} value="1" data-am-ucheck>男
+                </label>
+                <label class="am-radio-inline">
+                    <input type="radio" name="gender" {% if user.gender == 2 %}checked="checked"{% endif %}  value="2" data-am-ucheck>女
+                </label>
+            </i>
         </li>
         <li>
-            <a href="">
-                <i>生日</i>
-                <input class="infor-tele" placeholder="出生日期"/>
-            </a>
+            <i>生日</i>
+            <input type="date" name="birth_of_date" value="{{ user.birth_of_date|date:'Y-m-d' }}" class="infor-tele" placeholder="出生日期"/>
         </li>
     </ul>
     <div style="height: 10px; background: #efefef;"></div>
@@ -64,4 +61,6 @@
             <input class="infor-tele" placeholder="13012345678"/>
         </li>
     </ul>
+    <input type="submit" class="am-btn-block" value="提交">
+    </form>
 {% endblock %}

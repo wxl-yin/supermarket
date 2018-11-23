@@ -55,7 +55,6 @@
 
 {% endblock %}
 
-{% block footer_js %}
     <script type='text/javascript'>
         (function () {
             new PopUp_api({el: '.index-qd', html: '.qd-box'});
@@ -64,6 +63,9 @@
 
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/amazeui.min.js' %}"></script>
+
+{% block footer_js %}
+
 {% endblock %}
 </body>
 </html>
