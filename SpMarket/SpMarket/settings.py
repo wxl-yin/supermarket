@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,10 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sp_cart.apps.SpCartConfig',#购物车
-    'sp_goods.apps.SpGoodsConfig',#商品
-    'sp_order.apps.SpOrderConfig',#订单
-    'sp_user.apps.SpUserConfig',#用户
+    'haystack',  # 全文检索框架
+    'sp_cart.apps.SpCartConfig',  # 购物车
+    'sp_goods.apps.SpGoodsConfig',  # 商品
+    'sp_order.apps.SpOrderConfig',  # 订单
+    'sp_user.apps.SpUserConfig',  # 用户
+    'ckeditor',  # 添加ckeditor富文本编辑器
+    'ckeditor_uploader',  # 添加ckeditor富文本编辑器文件上传部件
 ]
 
 MIDDLEWARE = [
@@ -77,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'SpMarket.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -87,7 +88,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -107,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -122,7 +121,6 @@ USE_L10N = True
 
 USE_TZ = False
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 # 设置url, 方便在模板中动态的使用静态文件 {% static '静态文件地址' %} /static/xxx/xx.jpg
@@ -132,13 +130,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+# STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# 收集静态文件
 
 
 # 添加缓存的配置
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1", # 1 号 数据库, redis服务器必须开启
+        "LOCATION": "redis://127.0.0.1:6379/1",  # 1 号 数据库, redis服务器必须开启
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -149,14 +149,36 @@ CACHES = {
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
 
-
 # 阿里短信的配置
 ACCESS_KEY_ID = "LTAI2qSiJdWP87em"
 ACCESS_KEY_SECRET = "FzORQ587PgGBoOAdmxzCjaxQi8klUi"
-
 
 # 设置上传文件的url
 MEDIA_URL = "/static/media/"
 
 # 设置上传文件的目录
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+
+# 配置ckeditor
+# 上传文件目录 相对于static
+CKEDITOR_UPLOAD_PATH = "uploads/"
+# 编辑器样式配置
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
+
+# 配置haystack搜索引擎的
+# 全文检索框架的配置
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        # 配置搜索引擎
+        'ENGINE': 'utils.haystack.whoosh_cn_backend.WhooshEngine',
+        # 配置索引文件存储目录
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    },
+}
+# 当添加、修改、删除数据时，自动生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 20

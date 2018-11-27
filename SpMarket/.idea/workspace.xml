@@ -2,25 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fe05a5b-3575-4d89-9b09-a63bcaf6b444" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/sp_goods/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/sp_user/migrations/0002_auto_20181123_1059.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/base_view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/head/memtx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/sp_goods/migrations/0002_category_order.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/sp_goods/search_indexes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search/indexes/sp_goods/goodssku_text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sp_cart/shopcart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sp_goods/category.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sp_goods/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sp_goods/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/haystack/whoosh_cn_backend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpMarket/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpMarket/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpMarket/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpMarket/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/sp_cart/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_cart/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/sp_cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_cart/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/sp_goods/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_goods/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/sp_goods/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_goods/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/sp_goods/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_goods/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/sp_user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_user/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/sp_user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_user/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/sp_goods/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_goods/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/sp_goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_goods/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/sp_user/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_user/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/sp_user/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_user/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/sp_user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/sp_user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/sp_user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/sp_user/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/public/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sp_user/infor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sp_user/infor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sp_user/member.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sp_user/member.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sp_user/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sp_user/reg.html" afterDir="false" />
     </list>
+    <list id="6d5cf8cd-d3ff-4b67-9ec2-498915121aeb" name="New changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,16 +50,16 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
       </path>
@@ -62,19 +70,38 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SpMarket/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
+              <folding>
+                <element signature="e#310#319#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>RedisCache</find>
+      <find>qiandao</find>
+      <find>analyzer=StemmingAnalyzer</find>
+      <find>StemmingAnalyzer</find>
+      <find>StemmingAnalyzer.</find>
+      <find>increase</find>
+      <find>price</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -84,9 +111,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/sp_cart/views.py" />
-        <option value="$PROJECT_DIR$/apps/sp_cart/views.py" />
-        <option value="$PROJECT_DIR$/apps/sp_cart/urls.py" />
-        <option value="$PROJECT_DIR$/SpMarket/urls.py" />
         <option value="$PROJECT_DIR$/templates/sp_user/forgetpassword.html" />
         <option value="$PROJECT_DIR$/db/base_model.py" />
         <option value="$PROJECT_DIR$/templates/sp_user/login.html" />
@@ -95,14 +119,30 @@
         <option value="$PROJECT_DIR$/apps/sp_user/urls.py" />
         <option value="$PROJECT_DIR$/templates/sp_user/reg.html" />
         <option value="$PROJECT_DIR$/apps/sp_user/models.py" />
-        <option value="$PROJECT_DIR$/SpMarket/settings.py" />
         <option value="$PROJECT_DIR$/apps/sp_user/admin.py" />
         <option value="$PROJECT_DIR$/templates/sp_user/member.html" />
         <option value="$PROJECT_DIR$/apps/sp_user/forms.py" />
         <option value="$PROJECT_DIR$/templates/sp_user/infor.html" />
+        <option value="$PROJECT_DIR$/apps/sp_goods/apps.py" />
+        <option value="$PROJECT_DIR$/apps/sp_user/apps.py" />
+        <option value="$PROJECT_DIR$/apps/sp_goods/admin.py" />
         <option value="$PROJECT_DIR$/apps/sp_goods/models.py" />
-        <option value="$PROJECT_DIR$/apps/sp_user/views.py" />
+        <option value="$PROJECT_DIR$/apps/sp_goods/urls.py" />
+        <option value="$PROJECT_DIR$/templates/sp_goods/index.html" />
+        <option value="$PROJECT_DIR$/apps/sp_goods/search_indexes.py" />
+        <option value="$PROJECT_DIR$/templates/search/indexes/sp_goods/goodssku_text.txt" />
+        <option value="$PROJECT_DIR$/utils/haystack/whoosh_cn_backend.py" />
+        <option value="$PROJECT_DIR$/templates/search/search.html" />
+        <option value="$PROJECT_DIR$/SpMarket/settings.py" />
         <option value="$PROJECT_DIR$/apps/sp_user/helper.py" />
+        <option value="$PROJECT_DIR$/apps/sp_user/views.py" />
+        <option value="$PROJECT_DIR$/templates/sp_goods/detail.html" />
+        <option value="$PROJECT_DIR$/SpMarket/urls.py" />
+        <option value="$PROJECT_DIR$/apps/sp_goods/views.py" />
+        <option value="$PROJECT_DIR$/apps/sp_cart/urls.py" />
+        <option value="$PROJECT_DIR$/apps/sp_cart/views.py" />
+        <option value="$PROJECT_DIR$/templates/sp_goods/category.html" />
+        <option value="$PROJECT_DIR$/templates/sp_cart/shopcart.html" />
       </list>
     </option>
   </component>
@@ -134,16 +174,6 @@
               <item name="SpMarket" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpMarket" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SpMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="SpMarket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -162,15 +192,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project\supermarket\SpMarket\static\media\head" />
-      <recent name="D:\project\supermarket\SpMarket" />
-      <recent name="D:\project\supermarket\SpMarket\templates\sp_user" />
-      <recent name="D:\project\supermarket\SpMarket\static" />
-      <recent name="D:\project\supermarket\SpMarket\apps\sp_cart" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project\supermarket\SpMarket\apps" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\supermarket\SpMarket\templates\sp_cart" />
+      <recent name="D:\project\supermarket\SpMarket\utils\haystack" />
+      <recent name="D:\project\supermarket\SpMarket\templates\sp_goods" />
+      <recent name="D:\project\supermarket\SpMarket\static\media\head" />
+      <recent name="D:\project\supermarket\SpMarket" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -216,6 +246,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2fe05a5b-3575-4d89-9b09-a63bcaf6b444" name="Default" comment="" />
+      <changelist id="6d5cf8cd-d3ff-4b67-9ec2-498915121aeb" name="New changelist" comment="" />
       <created>1542676237818</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -249,34 +280,58 @@
       <option name="project" value="LOCAL" />
       <updated>1542703945057</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完成项目中的商品模型">
+      <created>1542970770884</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542970770884</updated>
+    </task>
+    <task id="LOCAL-00006" summary="完成项目中的商品模型">
+      <created>1542970795784</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542970795784</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" weight="0.3289256" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.5305785" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.3289256" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.57190084" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6710744" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.57355374" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18910742" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.59173554" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.73057854" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15431164" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="manage.py@SpMarket" order="9" weight="0.6710744" />
       <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.36528927" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5272727" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="manage.py@SpMarket" order="9" weight="0.6710744" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="13" weight="0.3289256" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3289256" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
@@ -293,6 +348,32 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -301,228 +382,15 @@
     <MESSAGE value="项目框架的搭建" />
     <MESSAGE value="完成项目中的注册功能" />
     <MESSAGE value="完成项目中的登陆功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成项目中的登陆功能" />
+    <MESSAGE value="完成项目中的商品模型" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成项目中的商品模型" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="16" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/sp_user/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="66" column="17" lean-forward="true" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#239#2242#0" />
-            <element signature="e#2289#3568#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4320">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_user/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="45" column="81" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="81" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpMarket/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4530">
-          <caret line="152" selection-start-line="152" selection-end-line="153" selection-end-column="52" />
-          <folding>
-            <element signature="e#310#319#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sp_user/reg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="78" column="57" lean-forward="true" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_user/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#239#2242#0" />
-            <element signature="e#2289#3568#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4320">
-          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_user/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="45" column="81" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="81" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpMarket/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4530">
-          <caret line="152" selection-start-line="152" selection-end-line="153" selection-end-column="52" />
-          <folding>
-            <element signature="e#310#319#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sp_user/reg.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_user/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#239#2242#0" />
-            <element signature="e#2289#3568#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4290">
-          <caret line="156" column="12" selection-start-line="156" selection-start-column="12" selection-end-line="156" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_user/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_goods/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_goods/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" lean-forward="true" selection-start-column="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_cart/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_order/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_goods/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_cart/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Supermarket/js/area.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sp_user/forgetpassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/base_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sp_user/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-          <folding>
-            <element signature="e#617#638#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dysms_python/dysms_python/const.py" />
-    <entry file="file://D:/virtual/django11/Lib/site-packages/django_redis/cache.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://cb73188b-8bc4-4819-bb20-6c53b2bacf81/schema/main/table/django_session">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/base_view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/public/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/virtual/django11/Lib/site-packages/django_redis/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -555,19 +423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpMarket/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="158" column="28" lean-forward="true" selection-start-line="158" selection-start-column="28" selection-end-line="158" selection-end-column="28" />
-          <folding>
-            <element signature="e#310#319#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -624,33 +479,6 @@
     <entry file="file://$PROJECT_DIR$/apps/sp_goods/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_goods/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_goods/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpMarket/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding>
-            <element signature="e#642#683#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/sp_user/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -668,23 +496,297 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/sp_goods/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/sp_user/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://5cb4a950-2599-42de-82c1-1a13db1387b4/schema/main/table/sp_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/public/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/qiandao.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="das://5cb4a950-2599-42de-82c1-1a13db1387b4/schema/main/table/sp_goods_activity">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/sp_goods/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/virtual/django11/Lib/site-packages/ckeditor_uploader/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="11" column="66" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://5cb4a950-2599-42de-82c1-1a13db1387b4/schema/main/table/sp_goods_goodssku">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/base_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Supermarket/images/order-pic.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Supermarket/images/order-top.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Supermarket/images/order-bot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Supermarket/images/order.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Supermarket/images/order-my.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sp_goods/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="82" column="44" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/sp_goods/search_indexes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/sp_goods/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="111" column="13" selection-start-line="111" selection-start-column="4" selection-end-line="111" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search/indexes/sp_goods/goodssku_text.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/virtual/django11/Lib/site-packages/jieba/analyse/analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/virtual/django11/Lib/site-packages/haystack/backends/whoosh_backend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="59" column="77" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/sp_user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="49" column="27" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#2987#3276#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sp_goods/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="151" column="44" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpMarket/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="e#642#683#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/sp_goods/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="59" lean-forward="true" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/sp_goods/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="105" column="32" lean-forward="true" selection-start-line="95" selection-start-column="4" selection-end-line="105" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-1154849986/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1577">
+          <caret line="4095" column="58" selection-start-line="4095" selection-start-column="51" selection-end-line="4095" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/virtual/django11/Lib/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/base_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/sp_user/helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="120">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/sp_user/views.py">
+    <entry file="file://$PROJECT_DIR$/apps/sp_cart/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="135" column="18" lean-forward="true" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
+        <state relative-caret-position="180">
+          <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#2987#3276#0" />
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/virtual/django11/Lib/site-packages/redis/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="1964" column="26" selection-start-line="1964" selection-start-column="22" selection-end-line="1964" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/sp_cart/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="122" column="20" selection-start-line="122" selection-start-column="12" selection-end-line="122" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#218#2413#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sp_goods/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="167" column="19" lean-forward="true" selection-start-line="133" selection-start-column="15" selection-end-line="167" selection-end-column="19" />
+          <folding>
+            <element signature="e#5374#6593#0#HTML" />
+            <element signature="e#6660#8444#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sp_cart/shopcart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#574#615#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#div#4;n#!!top" />
+            <element signature="e#3990#4206#0#HTML" />
+            <element signature="e#4254#4535#0#HTML" />
+            <element signature="e#6788#7002#0#HTML" />
+            <element signature="e#7233#7265#0#HTML" />
+            <element signature="e#4564#4596#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/haystack/whoosh_cn_backend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="159" column="11" lean-forward="true" selection-start-line="159" selection-start-column="11" selection-end-line="159" selection-end-column="11" />
+          <folding>
+            <element signature="e#19#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpMarket/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
+          <folding>
+            <element signature="e#310#319#0" expanded="true" />
           </folding>
         </state>
       </provider>

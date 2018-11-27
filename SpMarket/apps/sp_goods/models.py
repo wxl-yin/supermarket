@@ -1,9 +1,11 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 from db.base_model import BaseModel
+from django.conf import settings
 
 is_on_sale_choices = (
-    (0, "下架"),
-    (1, "上架"),
+    (False, "下架"),
+    (True, "上架"),
 )
 
 
@@ -19,6 +21,7 @@ class Category(BaseModel):
                              null=True,
                              blank=True
                              )
+    order = models.SmallIntegerField(default=0, verbose_name="排序")
 
     def __str__(self):
         return self.cate_name
@@ -50,8 +53,8 @@ class GoodsSPU(BaseModel):
     spu_name = models.CharField(verbose_name='商品SPU名称',
                                 max_length=20,
                                 )
-
-    content = models.TextField(verbose_name="商品详情")
+    # RichTextUploadingField 使用富文本编辑器渲染之前的普通文本框
+    content = RichTextUploadingField(verbose_name="商品详情")
 
     def __str__(self):
         return self.spu_name
@@ -91,6 +94,13 @@ class GoodsSKU(BaseModel):
     logo = models.ImageField(verbose_name='封面图片',
                              upload_to='goods/%Y%m/%d'
                              )
+
+    # 自定义的字段
+    def show_logo(self):
+        return "<img style='width:80px' src='{}{}'/>".format(settings.MEDIA_URL, self.logo)
+
+    show_logo.allow_tags = True
+    show_logo.short_description = "LOGO"
 
     is_on_sale = models.BooleanField(verbose_name="是否上架",
                                      choices=is_on_sale_choices,
@@ -143,6 +153,13 @@ class Banner(BaseModel):
 
     goods_sku = models.ForeignKey(to="GoodsSKU", verbose_name="商品SKU")
 
+    class Meta:
+        verbose_name = "轮播管理"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
+
 
 class Activity(BaseModel):
     """
@@ -184,7 +201,7 @@ class ActivityZone(BaseModel):
         return self.title
 
     class Meta:
-        verbose_name = "活动管理"
+        verbose_name = "活动专区管理"
         verbose_name_plural = verbose_name
 
 

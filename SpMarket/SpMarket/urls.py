@@ -16,8 +16,15 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from sp_goods.views import index
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^$', index),#网站的首页
+    url(r'^admin/', admin.site.urls),#后台管理的路由
+    # 上传部件自动调用的上传地址
+    # 全文搜索框架
+    url(r'^search/', include('haystack.urls')),
+    url(r'^ckeditor/', include("ckeditor_uploader.urls")),
     url(r'^user/', include("sp_user.urls", namespace="sp_user")),  # 用户模块
     url(r'^goods/', include("sp_goods.urls", namespace="sp_goods")),  # 商品模块
     url(r'^cart/', include("sp_cart.urls", namespace="sp_cart")),  # 购物车模块

@@ -41,8 +41,14 @@ class LoginView(View):
             user = login_form.cleaned_data.get('user')
             # 调用登陆的方法,放在helper模块中的
             login(request, user)
-            # 跳转到用户中心页面
-            return redirect('sp_user:member')
+
+            # 判断链接上是否有参数next,如果有就跳转到指定的页面
+            next = request.GET.get('next')
+            if next:
+                return redirect(next)
+            else:
+                # 跳转到用户中心页面
+                return redirect('sp_user:member')
         else:
             return render(request, "sp_user/login.html", {'form': login_form})
 
