@@ -1,8 +1,9 @@
 from django import forms
 
 from sp_user.helper import set_password
-from sp_user.models import SpUser
+from sp_user.models import SpUser, SpAddress
 from django_redis import get_redis_connection
+
 """
     普通的form
     
@@ -80,9 +81,9 @@ class RegisterModelForm(forms.ModelForm):
             return verify_code
 
 
-
 class LoginModelForm(forms.ModelForm):
     """登陆的form表单"""
+
     class Meta:
         model = SpUser
         fields = ['phone', 'password']
@@ -96,12 +97,12 @@ class LoginModelForm(forms.ModelForm):
             }
         }
 
-        widgets = { # 样式
+        widgets = {  # 样式
             'phone': forms.TextInput(attrs={"class": "login-name", "placeholder": '请输入手机号'}),
             'password': forms.PasswordInput(attrs={"class": "login-password", "placeholder": '请输入密码'}),
         }
 
-    def clean(self):# 综合校验
+    def clean(self):  # 综合校验
         cleaned_data = self.cleaned_data
         # 获取用手机和密码
         phone = cleaned_data.get('phone')
@@ -129,7 +130,77 @@ class LoginModelForm(forms.ModelForm):
 class InfoModelForm(forms.ModelForm):
     class Meta:
         model = SpUser
-        fields = ['nickname','head','birth_of_date']
-
+        fields = ['nickname', 'head', 'birth_of_date']
 
         # error_messages
+
+
+class AddressModelForm(forms.ModelForm):
+    class Meta:
+        model = SpAddress
+        fields = ['hcity', 'hproper', 'harea', 'detail', 'username', 'phone', 'isDefault']
+
+        error_messages = {
+            "harea": {
+                "required": "收货地址必填"
+            },
+            "detail": {
+                "required": "详细地址必填"
+            },
+            "phone": {
+                "required": "手机号码必填"
+            },
+            "username": {
+                "required": "收货人姓名必填"
+            },
+        }
+
+    def clean(self):
+        # 验证当前用户的收货地址的数量,如果超过6个就报错
+        user_id = self.data.get('user_id')
+        count = SpAddress.objects.filter(user_id=user_id, isDelete=False).count()
+        if count >= 6:
+            raise forms.ValidationError("收货地址数量不能超过6")
+
+        # 默认收货地址只能有一个, 判断当前添加的是否 isDefault==True,
+        # 如果是就讲其他的收货地址都设置为False
+        isDefault = self.cleaned_data.get("isDefault")
+        if isDefault:
+            # 如果是就讲其他的收货地址都设置为False
+            SpAddress.objects.filter(user_id=user_id).update(isDefault=False)
+
+        return self.cleaned_data
+
+
+class AddressEditModelForm(forms.ModelForm):
+    class Meta:
+        model = SpAddress
+        fields = ['hcity', 'hproper', 'harea', 'detail', 'username', 'phone', 'isDefault']
+
+        error_messages = {
+            "harea": {
+                "required": "收货地址必填"
+            },
+            "detail": {
+                "required": "详细地址必填"
+            },
+            "phone": {
+                "required": "手机号码必填"
+            },
+            "username": {
+                "required": "收货人姓名必填"
+            },
+        }
+
+    def clean(self):
+        # 验证当前用户的收货地址的数量,如果超过6个就报错
+        user_id = self.data.get('user_id')
+
+        # 默认收货地址只能有一个, 判断当前添加的是否 isDefault==True,
+        # 如果是就讲其他的收货地址都设置为False
+        isDefault = self.cleaned_data.get("isDefault")
+        if isDefault:
+            # 如果是就讲其他的收货地址都设置为False
+            SpAddress.objects.filter(user_id=user_id).update(isDefault=False)
+
+        return self.cleaned_data

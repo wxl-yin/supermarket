@@ -127,10 +127,10 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 # 测试服务器使用
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
-# STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static")
+# ]
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 # 收集静态文件
 
 
