@@ -150,8 +150,8 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
 
 # 阿里短信的配置
-ACCESS_KEY_ID = "LTAI2qSiJdWP87em"
-ACCESS_KEY_SECRET = "FzORQ587PgGBoOAdmxzCjaxQi8klUi"
+ACCESS_KEY_ID = "xxxx"
+ACCESS_KEY_SECRET = "xxxxxx"
 
 # 设置上传文件的url
 MEDIA_URL = "/static/media/"
